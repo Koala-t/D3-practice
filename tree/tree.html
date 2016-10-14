@@ -5,24 +5,7 @@
 
     <title>Collapsible Tree Example</title>
 
-    <style>
-
- .node circle {
-   fill: #fff;
-   stroke: steelblue;
-   stroke-width: 3px;
- }
-
- .node text { font: 12px sans-serif; }
-
- .link {
-   fill: none;
-   stroke: #ccc;
-   stroke-width: 2px;
- }
-
-    </style>
-
+    <link rel="stylesheet" type="text/css" href="tree.css">
   </head>
 
   <body>
@@ -36,38 +19,46 @@ var treeData = [
   {
     "name": "Addition",
     "parent": "null",
+    "level": "green",
     "children": [
       {
         "name": "Multiplication",
         "parent": "Addition",
+        "level": "red",
         "children": [
           {
             "name": "Square Roots",
             "parent": "Multiplication",
+            "level": "blue",
             "children": [
               {
                 "name": "Higher Powers",
-                "Parent": "Square Roots"
+                "Parent": "Square Roots",
+                "level": "blue"
               }
             ]
           },
           {
             "name": "Fractional Multiplication",
-            "parent": "Multiplication"
+            "parent": "Multiplication",
+            "level": "red"
           },
           {
             "name": "Decimal Multiplication",
-            "parent": "Multiplication"
+            "parent": "Multiplication",
+            "level": "red"
           }
         ]
       },
       {
         "name": "Fractional Addition",
-        "parent": "Addition"
+        "parent": "Addition",
+        "level": "green"
       },
       {
         "name": "Decimal Addition",
-        "parent": "Addition"
+        "parent": "Addition",
+        "level": "green"
       }
     ]
   }
@@ -118,7 +109,7 @@ function update(source) {
   nodeEnter.append("circle")
    .attr("r", 10)
    .attr("class", function(d) { return d.name; })
-   .style("fill", "#fff");
+   .style("fill", function(d) { return d.level; });
 
   nodeEnter.append("text")
    .attr("x", function(d) {
