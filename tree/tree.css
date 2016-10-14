@@ -11,3 +11,7 @@
  stroke: #ccc;
  stroke-width: 2px;
 }
+
+svg {
+  background: linear-gradient(to bottom,  #1e5799 0%,#2989d8 100%,#207cca 51%,#7db9e8 100%);
+}
