@@ -17,51 +17,91 @@
 
 var treeData = [
   {
-    "name": "Addition",
+    "name": "Counting",
     "parent": "null",
-    "level": "green",
+    "level": "grey",
     "children": [
+    {
+      "name": "Addition",
+      "parent": "Counting",
+      "level": "green",
+      "children": [
+        {
+          "name": "Multiplication",
+          "parent": "Addition",
+          "level": "red",
+          "children": [
+            {
+              "name": "Powers",
+              "parent": "Multiplication",
+              "level": "blue"
+            },
+            {
+              "name": "Fractional Multiplication",
+              "parent": "Multiplication",
+              "level": "red"
+            },
+            {
+              "name": "Decimal Multiplication",
+              "parent": "Multiplication",
+              "level": "red"
+            }
+          ]
+        },
+        {
+          "name": "Fractional Addition",
+          "parent": "Addition",
+          "level": "green"
+        },
+        {
+          "name": "Decimal Addition",
+          "parent": "Addition",
+          "level": "green"
+        }
+      ]
+    },
+    {
+      "name": "Subtraction",
+      "parent": "Counting",
+      "level": "orange",
+      "children": [
+
       {
-        "name": "Multiplication",
-        "parent": "Addition",
-        "level": "red",
+        "name": "Decimal Subtraction",
+        "parent": "Subtraction",
+        "level": "orange",
+      },
+      {
+        "name": "Fractional Subtraction",
+        "parent": "Subtraction",
+        "level": "orange"
+      },
+      {
+        "name": "Division",
+        "parent": "Subtraction",
+        "level": "purple",
         "children": [
-          {
-            "name": "Square Roots",
-            "parent": "Multiplication",
-            "level": "blue",
-            "children": [
-              {
-                "name": "Higher Powers",
-                "Parent": "Square Roots",
-                "level": "blue"
-              }
-            ]
-          },
-          {
-            "name": "Fractional Multiplication",
-            "parent": "Multiplication",
-            "level": "red"
-          },
-          {
-            "name": "Decimal Multiplication",
-            "parent": "Multiplication",
-            "level": "red"
-          }
+            {
+          "name": "Decimal Division",
+          "parent": "Division",
+          "level": "purple",
+        },
+        {
+          "name": "Fractional Division",
+          "parent": "Division",
+          "level": "purple"
+        },
+        {
+          "name": "Square Roots",
+          "parent": "Division",
+          "level": "violet"
+        }
         ]
-      },
-      {
-        "name": "Fractional Addition",
-        "parent": "Addition",
-        "level": "green"
-      },
-      {
-        "name": "Decimal Addition",
-        "parent": "Addition",
-        "level": "green"
       }
-    ]
-  }
+
+      ]
+    }
+  ]}
 ];
 
 // ************** Generate the tree diagram  *****************
