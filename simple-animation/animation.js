@@ -8,19 +8,16 @@ d3.select('#animation-div').selectAll('svg')
 
 var svg = d3.select("svg");
 
-
-function makeCircle() {
+function makeCircle(names) {
   var circle = svg.selectAll("circle")
-    .data(['flappy bird', 'frogger', 'potato', 'thumb', 'othergame', "more game"]);
+    .data(names);
   
   circle.enter().append("circle")
     .attr("cy", 100)
-    .attr("cx", 0)
+    .attr("cx", -30)
     .attr("r", 18)
     .attr("class", function(d){ return d });
 };
-
-makeCircle();
 
 function moveCircleRight() {
   svg.selectAll('circle')
@@ -30,18 +27,14 @@ function moveCircleRight() {
     .attr('cx', function(d, i){ return 700 - (150 * i) });
 };
 
-moveCircleRight()
-
 function moveCircleDown() {
   svg.selectAll('circle')
     .transition()
-    .delay( function(d, i){ return 50 * i } )
+    .delay( function(d, i){ return 50 * i })
     .duration(1000)
-    .attr('cy', 500);
+    .attr('cy', 400);
 };
 
+makeCircle(['flappy bird', 'frogger', 'potato', 'thumb', 'othergame']);
+moveCircleRight()
 setTimeout(moveCircleDown, 1500);
-
-function displayTitle() {
-
-};
